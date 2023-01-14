@@ -1,0 +1,32 @@
+:root {
+  --default-dark: #0f172a;
+  --default-gray: #78716c;
+  --default-white: #fafaf9;
+}
+
+body {
+  background-color: var(--default-white);
+  font-family: "Monserrat", sans-serif;
+}
+
+main {
+  dispay: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 20px;
+}

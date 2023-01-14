@@ -23,11 +23,36 @@
     <main>
       <div id="instructions-pane">
         <h2>Instructions</h2>
-        <div class="instruction">You can use your keyboard to calculate</div>
+        <div class="instruction">
+          You can use your keyboard to do calculations
+        </div>
         <div class="instruction">Press <span>backspace</span> to delete</div>
         <div class="instruction">Press <span>DEL</span> to clear contents</div>
       </div>
-      <div id="calculator">THING</div>
+      <div id="calculator">
+        <div id="screen"></div>
+        <div id="btn-container">
+          <button class="btn" id="clear" onclick="this.blur()">CLEAR</button>
+          <button class="btn" id="delete" onclick="this.blur()">DELETE</button>
+          <button class="btn" onclick="this.blur()" num>7</button>
+          <button class="btn" onclick="this.blur()" num>8</button>
+          <button class="btn" onclick="this.blur()" num>9</button>
+          <button class="btn" onclick="this.blur()" num>+</button>
+          <button class="btn" onclick="this.blur()" num>4</button>
+          <button class="btn" onclick="this.blur()" num>5</button>
+          <button class="btn" onclick="this.blur()" num>6</button>
+          <button class="btn" onclick="this.blur()" num>-</button>
+          <button class="btn" onclick="this.blur()" num></button>
+          <button class="btn" onclick="this.blur()" num>1</button>
+          <button class="btn" onclick="this.blur()" num>2</button>
+          <button class="btn" onclick="this.blur()" num>3</button>
+          <button class="btn" onclick="this.blur()" num>x</button>
+          <button class="btn" onclick="this.blur()" num>.</button>
+          <button class="btn" onclick="this.blur()" num>0</button>
+          <button class="btn" onclick="this.blur()" num>=</button>
+          <button class="btn" onclick="this.blur()" num>÷</button>
+        </div>
+      </div>
     </main>
     <footer>
       <p id="footer">

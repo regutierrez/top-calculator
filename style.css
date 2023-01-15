@@ -1,22 +1,29 @@
 :root {
   --default-dark: #0f172a;
-  --default-gray: #78716c;
-  --default-white: #fafaf9;
+  --default-white: #f6f6f6;
+  --calc: #4d4d4d;
+  --screen: #d6e3d6;
 }
 
 body {
   background-color: var(--default-white);
   font-family: "Monserrat", sans-serif;
+  font-
 }
 
 main {
   display: flex;
-  justify-content: flex-start;
   align-items: left;
   justify-content: left;
   gap: 100px;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+h1 {
+  font-size: large;
+  margin: 0 0 30px 0;
+  color: var(--default-white);
 }
 
 #instructions-pane {
@@ -29,14 +36,22 @@ main {
 }
 
 #calculator {
-  display: grid;
+  display: flexbox;
+  border-radius: 30px;
+  padding: 20px;
   width: 500px;
-  height: 500px;
+  background-color: var(--calc);
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 
-header {
-  text-align: center;
+#screen {
+  border-radius: 20px;
+  margin: auto;
+  border: 10px solid var(--default-dark);
+  padding: 5px 10px;
+  width: 450px;
+  height: 150px;
+  background-color: var(--screen);
 }
 
 footer {

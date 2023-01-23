@@ -45,12 +45,22 @@ h1 {
 
 #screen {
   border-radius: 20px;
-  margin: auto;
+  margin: auto auto 20px auto;
   border: 10px solid var(--default-dark);
   padding: 5px 10px;
   width: 450px;
   height: 150px;
   background-color: var(--screen);
+}
+
+#btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.special-btn {
+  grid-column: span 2;
 }
 
 footer {

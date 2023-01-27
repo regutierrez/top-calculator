@@ -1,14 +1,18 @@
 :root {
   --default-dark: #0f172a;
-  --default-white: #f6f6f6;
+  --default-white: #ffffff;
   --calc: #4d4d4d;
   --screen: #d6e3d6;
-  --btn-sp: #fd7f20;
+  --btn: #999999;
+  --btn-hover: #757575;
+  --btn-font: #ffffff;
+  --btn-sp: #8dc11f;
+  --btn-sp-hover: #6d9614;
 }
 
 body {
   background-color: var(--default-white);
-  font-family: "Monserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
@@ -22,16 +26,17 @@ main {
 }
 
 h1 {
-  font-size: large;
+  font-size: x-large;
   margin: 0 0 30px 0;
   color: var(--default-white);
+  margin: 0 10px 30px 10px;
 }
 
 #calculator {
   display: flexbox;
   border-radius: 30px;
   padding: 20px;
-  width: 300px;
+  width: 400px;
   background-color: var(--calc);
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
@@ -41,7 +46,7 @@ h1 {
   margin: auto auto 20px auto;
   border: 10px solid var(--default-dark);
   padding: 5px 10px;
-  width: 250px;
+  width: 360px;
   height: 100px;
   background-color: var(--screen);
 }
@@ -52,10 +57,25 @@ h1 {
   grid-gap: 10px;
 }
 
+.btn {
+  background-color: var(--btn);
+  color: var(--btn-font);
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
 .sp-btn {
   background-color: var(--btn-sp);
 }
 
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.sp-btn:hover {
+  background-color: var(--btn-sp-hover);
+}
 footer {
   position: absolute;
   bottom: 0;
@@ -65,5 +85,5 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  font-size: 20px;
+  font-size: 30px;
 }

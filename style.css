@@ -49,6 +49,16 @@ h1 {
   width: 360px;
   height: 100px;
   background-color: var(--screen);
+  text-align: right;
+}
+
+#result-screen {
+  height: 40px;
+  font-size: 25px;
+}
+#input-screen {
+  height: 60px;
+  font-size: 40px;
 }
 
 #btn-container {

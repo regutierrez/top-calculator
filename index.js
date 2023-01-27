@@ -7,7 +7,15 @@ const pointBtn = document.getElementById("point");
 const resultScreen = document.getElementById("result-screen");
 const inputScreen = document.getElementById("input-screen");
 
-window.addEventListener("keydown", handle);
+window.addEventListener("keydown", handleKeyStroke);
+
+numBtn.forEach((button) =>
+  button.addEventListener("click", () => appendNumber(button.textContent))
+);
+
+function appendNumber(num) {
+  if (inputScreen.textContent === "0") resetScreen;
+}
 
 function add(x, y) {
   return x + y;

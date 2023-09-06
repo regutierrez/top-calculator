@@ -33,7 +33,6 @@ function resetResultScreen() {
 }
 
 function clearScreen() {
-  console.log('clear')
   resultScreen.textContent = ''
   inputScreen.textContent = '0'
   firstOperand = ''
@@ -43,7 +42,6 @@ function clearScreen() {
 
 function appendNumber(number) {
   if (inputScreen.textContent === '0' || resetScreen){
-    console.log(resetScreen)
     resetResultScreen()
   }
   inputScreen.textContent += number

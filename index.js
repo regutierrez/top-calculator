@@ -18,7 +18,14 @@ numBtn.forEach((button) =>
   button.addEventListener("click", () => appendNumber(button.textContent))
 );
 
+operatorBtn.forEach((button) =>
+  button.addEventListener("click", () => appendNumber(button.textContent))
+);
+
+equalsBtn.addEventListener("click", () => evaluateExpression())
 clearBtn.addEventListener("click", () => clearScreen())
+deleteBtn.addEventListener("click", () => deleteNumber())
+pointBtn.addEventListener("click", () => appendPoint())
 
 function resetResultScreen() {
   inputScreen.textContent = ''
@@ -46,6 +53,19 @@ function handleKeyStroke(e) {
   if (e.key >=  0 && e.key <= 9){
     appendNumber(e.key)
   } 
+
+  if (e.key === '.') appendPoint()
+
+  if (e.key === 'Backspace') deleteNumber()
+}
+
+function deleteNumber() {
+  console.log(`in deleteNumber ${inputScreen.textContent.length}`)
+  if (inputScreen.textContent.length == 1) {
+    inputScreen.textContent = '0'
+  } else {
+    inputScreen.textContent = inputScreen.textContent.slice(0, -1)
+  }
 }
 
 function add(x, y) {

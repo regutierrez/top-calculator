@@ -59,8 +59,13 @@ function handleKeyStroke(e) {
   if (e.key === 'Backspace') deleteNumber()
 }
 
+function appendPoint() {
+  if (resetScreen) resetResultScreen()
+  if (inputScreen.textContent.includes('.')) return
+  inputScreen.textContent += '.'
+}
+
 function deleteNumber() {
-  console.log(`in deleteNumber ${inputScreen.textContent.length}`)
   if (inputScreen.textContent.length == 1) {
     inputScreen.textContent = '0'
   } else {

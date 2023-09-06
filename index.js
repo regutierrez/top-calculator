@@ -19,7 +19,7 @@ numBtn.forEach((button) =>
 );
 
 operatorBtn.forEach((button) =>
-  button.addEventListener("click", () => appendNumber(button.textContent))
+  button.addEventListener("click", () => setoperation(button.textContent))
 );
 
 equalsBtn.addEventListener("click", () => evaluateExpression())
@@ -49,14 +49,19 @@ function appendNumber(number) {
   inputScreen.textContent += number
 }
 
+
+function roundResult(number) {
+  return Math.round(number * 1000) / 1000
+}
+
 function handleKeyStroke(e) {
-  if (e.key >=  0 && e.key <= 9){
-    appendNumber(e.key)
-  } 
-
+  if (e.key >= 0 && e.key <= 9) appendNumber(e.key)
   if (e.key === '.') appendPoint()
-
+  if (e.key === '=' || e.key === 'Enter') evaluateExpression()
   if (e.key === 'Backspace') deleteNumber()
+  if (e.key === 'Escape') clearScreen()
+  if (e.key === '+' || e.key === '-' || e.key === 'x' || e.key === '/') 
+    setOperation(convertOperator(e.key))
 }
 
 function appendPoint() {
@@ -73,6 +78,34 @@ function deleteNumber() {
   }
 }
 
+function convertOperator(keyboardOperator) {
+  if (keyboardOperator === '/') return '÷'
+  if (keyboardOperator === '*') return 'x'
+  if (keyboardOperator === '-') return '-'
+  if (keyboardOperator === '+') return '+'
+}
+
+function setoperation(operator) {
+  currentOperation = operator 
+  firstOperand = inputScreen.textContent
+  resultScreen.textContent = `${firstOperand} ${currentOperation}`
+  resetScreen = true
+}
+
+function evaluateExpression() {
+  if (currentOperation === null || resetScreen) return
+  if (currentOperation === '÷' && inputScreen.textContent === '0') {
+    alert("Warning! Division by zero!")
+    return
+  }
+  secondOperand = inputScreen.textContent
+  inputScreen.textContent = roundResult(
+    operate(currentOperation, firstOperand, secondOperand)
+  )
+  resetScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} =`
+  currentOperation = null
+}
+
 function add(x, y) {
   return x + y;
 }
@@ -84,4 +117,22 @@ function multiply(x, y) {
 }
 function divide(x, y) {
   return x / y;
+}
+
+function operate(operator, x, y) {
+  x = Number(x)
+  y = Number(y)
+  switch (operator) {
+    case '+':
+      return add(x, y)
+    case '-':
+      return subtract(x, y)
+    case 'x':
+      return multiply(x, y)
+    case '÷':
+      if (x === 0) return null
+      else return divide(x, y)
+    default:
+      return null
+  }
 }
